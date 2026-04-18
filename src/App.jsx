@@ -78,7 +78,7 @@ function About() {
           <h3>Quick info</h3>
           <div className="info-row">
             <span className="info-label">Degree</span>
-            <span>B.S. Computer Science</span>
+            <span>H.B.Sc Computer Science & Mathematics</span>
           </div>
           <div className="info-row">
             <span className="info-label">School</span>
@@ -91,10 +91,6 @@ function About() {
           <div className="info-row">
             <span className="info-label">Based in</span>
             <span>Toronto, Canada</span>
-          </div>
-          <div className="info-row">
-            <span className="info-label">IB Score</span>
-            <span>40 / 45</span>
           </div>
           <div className="info-row">
             <span className="info-label">Status</span>
