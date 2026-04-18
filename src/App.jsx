@@ -22,6 +22,10 @@ function Hero() {
   return (
     <section className="hero">
       <p className="hero-tag">{'> hello, world!'}</p>
+      <p className="hero-tag">{'> hola, mundo!'}</p>
+      <p className="hero-tag">{'> ハロー, ワールド!'}</p>
+
+
       <h1>
         Hi, I'm <span>Marina Mendieta</span>.<br />
         I'm a student, researcher, & AI enthusiast.
