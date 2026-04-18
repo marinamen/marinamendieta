@@ -1,5 +1,6 @@
 import './App.css';
 import Terminal from './Terminal';
+import BinaryBlossom from './BinaryBlossom';
 import { projects, skills, experience, awards } from './data';
 
 function Nav() {
@@ -204,6 +205,8 @@ function Contact() {
 export default function App() {
   return (
     <>
+      <BinaryBlossom />
+      <div style={{ position: 'relative', zIndex: 1 }}>
       <Nav />
       <Hero />
       <About />
@@ -215,6 +218,7 @@ export default function App() {
       <footer>
         <p>Built with React + Vite · Marina Mendieta · 2025</p>
       </footer>
+      </div>
     </>
   );
 }
