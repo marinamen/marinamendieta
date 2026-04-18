@@ -1,11 +1,68 @@
 import { useEffect, useRef } from 'react';
 
-const CHARS = '01';
-const FONT_SIZE = 14;
-const COLORS = ['#ffc2d1', '#ff85a1', '#ffb3c6', '#ffd6e0', '#ff85a1'];
-const SPEED_MIN = 0.4;
-const SPEED_MAX = 1.1;
-const SPAWN_RATE = 0.015; // probability per column per frame
+const COLORS = ['#ff4d6d', '#c9184a', '#ff85a1', '#a4133c', '#ff4d6d'];
+const MAX_PETALS = 4;
+const CHAR_SPACING = 11;
+const FONT_SIZE = 10;
+
+// Pre-compute which grid offsets fall inside the petal shape at a given size.
+// Returns array of {dx, dy, char, color} — computed once per petal spawn.
+function buildPetalChars(size) {
+  const w = size * 0.6;
+  const h = size;
+  const pad = size * 0.1;
+  const bw = (w + pad) * 2;
+  const bh = h + pad * 2;
+
+  const offscreen = document.createElement('canvas');
+  offscreen.width = Math.ceil(bw);
+  offscreen.height = Math.ceil(bh);
+  const octx = offscreen.getContext('2d');
+
+  const cx = bw / 2;
+  const cy = bh / 2;
+
+  const path = new Path2D();
+  path.moveTo(cx, cy - h * 0.08);
+  path.bezierCurveTo(cx - w * 0.15, cy - h * 0.55, cx - w, cy - h * 0.35, cx - w * 0.9, cy);
+  path.bezierCurveTo(cx - w * 0.7, cy + h * 0.55, cx, cy + h * 0.5, cx, cy + h * 0.5);
+  path.bezierCurveTo(cx, cy + h * 0.5, cx + w * 0.7, cy + h * 0.55, cx + w * 0.9, cy);
+  path.bezierCurveTo(cx + w, cy - h * 0.35, cx + w * 0.15, cy - h * 0.55, cx, cy - h * 0.08);
+  path.closePath();
+
+  const chars = [];
+  for (let px = 0; px < bw; px += CHAR_SPACING) {
+    for (let py = 0; py < bh; py += CHAR_SPACING) {
+      if (octx.isPointInPath(path, px, py)) {
+        chars.push({
+          dx: px - cx,
+          dy: py - cy,
+          char: Math.random() > 0.5 ? '0' : '1',
+          color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        });
+      }
+    }
+  }
+  return chars;
+}
+
+function newPetal(width) {
+  const size = 70 + Math.random() * 40;
+  return {
+    x: 40 + Math.random() * (width - 80),
+    y: -size,
+    size,
+    chars: buildPetalChars(size),
+    speed: 0.45 + Math.random() * 0.4,
+    rotation: Math.random() * Math.PI * 2,
+    rotationSpeed: (Math.random() - 0.5) * 0.008,
+    swayFreq: 0.007 + Math.random() * 0.005,
+    swayAmp: 0.5 + Math.random() * 0.4,
+    swayOffset: Math.random() * Math.PI * 2,
+    opacity: 0.75 + Math.random() * 0.2,
+    age: 0,
+  };
+}
 
 export default function BinaryBlossom() {
   const canvasRef = useRef(null);
@@ -13,69 +70,66 @@ export default function BinaryBlossom() {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
-
-    let width, height, cols;
-    const drops = []; // { x, y, speed, opacity, char, color, size }
+    let width, height;
 
     function resize() {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
-      cols = Math.floor(width / (FONT_SIZE * 1.4));
     }
+    resize();
+    window.addEventListener('resize', resize);
 
-    function spawnDrop(col) {
-      const x = col * FONT_SIZE * 1.4 + Math.random() * 8;
-      drops.push({
-        x,
-        y: -FONT_SIZE,
-        speed: SPEED_MIN + Math.random() * (SPEED_MAX - SPEED_MIN),
-        opacity: 0.15 + Math.random() * 0.35,
-        char: CHARS[Math.floor(Math.random() * CHARS.length)],
-        color: COLORS[Math.floor(Math.random() * COLORS.length)],
-        size: FONT_SIZE - 2 + Math.floor(Math.random() * 4),
-        wobble: (Math.random() - 0.5) * 0.3,
-        wobbleOffset: Math.random() * Math.PI * 2,
-        age: 0,
-      });
-    }
+    const petals = [
+      { ...newPetal(window.innerWidth), y: window.innerHeight * 0.15 },
+      { ...newPetal(window.innerWidth), y: window.innerHeight * 0.5 },
+    ];
+
+    ctx.font = `${FONT_SIZE}px "Courier New", monospace`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
 
     let animId;
     function draw() {
       ctx.clearRect(0, 0, width, height);
 
-      // spawn new drops
-      for (let c = 0; c < cols; c++) {
-        if (Math.random() < SPAWN_RATE) spawnDrop(c);
+      if (petals.length < MAX_PETALS && Math.random() < 0.004) {
+        petals.push(newPetal(width));
       }
 
-      // draw and update
-      for (let i = drops.length - 1; i >= 0; i--) {
-        const d = drops[i];
-        d.age++;
-        d.y += d.speed;
-        d.x += Math.sin(d.wobbleOffset + d.age * 0.04) * d.wobble;
+      ctx.font = `${FONT_SIZE}px "Courier New", monospace`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
 
-        // fade in/out
-        const fadeIn = Math.min(1, d.age / 30);
-        const fadeOut = d.y > height - 80 ? Math.max(0, 1 - (d.y - (height - 80)) / 80) : 1;
-        const alpha = d.opacity * fadeIn * fadeOut;
+      for (let i = petals.length - 1; i >= 0; i--) {
+        const p = petals[i];
+        p.age++;
+        p.y += p.speed;
+        p.x += Math.sin(p.swayOffset + p.age * p.swayFreq) * p.swayAmp;
+        p.rotation += p.rotationSpeed;
 
+        const fadeIn = Math.min(1, p.age / 50);
+        const fadeOut = p.y > height - 100 ? Math.max(0, 1 - (p.y - (height - 100)) / 100) : 1;
+        const alpha = p.opacity * fadeIn * fadeOut;
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
         ctx.globalAlpha = alpha;
-        ctx.fillStyle = d.color;
-        ctx.font = `${d.size}px "Courier New", monospace`;
-        ctx.fillText(d.char, d.x, d.y);
 
-        if (d.y > height + FONT_SIZE) drops.splice(i, 1);
+        for (const c of p.chars) {
+          ctx.fillStyle = c.color;
+          ctx.fillText(c.char, c.dx, c.dy);
+        }
+
+        ctx.restore();
+
+        if (p.y > height + p.size) petals.splice(i, 1);
       }
 
-      ctx.globalAlpha = 1;
       animId = requestAnimationFrame(draw);
     }
 
-    resize();
     draw();
-    window.addEventListener('resize', resize);
-
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', resize);

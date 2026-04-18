@@ -16,11 +16,14 @@
   --border: #ffc2d1;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  background: var(--pink-light);
+}
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: var(--pink-light);
+  background: transparent;
   color: var(--text);
   line-height: 1.6;
 }
