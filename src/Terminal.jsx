@@ -25,10 +25,11 @@ function runCommand(raw) {
   if (cmd === 'help') return [{ text: HELP_TEXT, cls: 'info' }];
 
   if (cmd === 'whoami') return [
-    { text: 'Marina Mendieta', cls: 'output' },
-    { text: 'CS student • builder • curious human', cls: '' },
-    { text: 'I love turning ideas into software — from low-level systems', cls: '' },
-    { text: 'to full-stack apps. Currently looking for SWE internships.', cls: '' },
+    { text: 'Marina Mendieta Rodriguez Ramos', cls: 'output' },
+    { text: 'CS student @ University of Toronto · AI researcher · builder', cls: '' },
+    { text: 'Published AI researcher (AAAI 2026), ex-YC intern, IB 40/45.', cls: '' },
+    { text: 'From Madrid → Japan → Toronto. Passionate about LLMs,', cls: '' },
+    { text: 'AI safety, NLP, and tech for social good.', cls: '' },
   ];
 
   if (cmd === 'ls projects' || cmd === 'ls') return [
@@ -52,13 +53,19 @@ function runCommand(raw) {
   }
 
   if (cmd === 'cat resume') return [
-    { text: '=== Marina Mendieta — Résumé ===', cls: 'pink' },
+    { text: '=== Marina Mendieta Rodriguez Ramos ===', cls: 'pink' },
+    { text: 'marina.mendietarr@gmail.com  ·  Toronto, Canada', cls: 'muted' },
     { text: '', cls: '' },
     { text: 'Education:', cls: 'info' },
-    { text: '  B.S. Computer Science  |  Expected May 2026', cls: '' },
+    { text: '  B.S. Computer Science  |  University of Toronto  |  2025–2028', cls: '' },
+    { text: '  IB Diploma  |  UWC ISAK Japan  |  40/45', cls: '' },
     { text: '', cls: '' },
     { text: 'Experience:', cls: 'info' },
     ...experience.map(e => ({ text: `  • ${e.role} @ ${e.org}  (${e.date})`, cls: '' })),
+    { text: '', cls: '' },
+    { text: 'Awards:', cls: 'info' },
+    { text: '  AAAI 2026 · TKS×Microsoft Scholar · UWC Davis Scholar', cls: '' },
+    { text: '  Inspirit AI Winner · Technovation Girls Semifinalist', cls: '' },
     { text: '', cls: '' },
     { text: 'Run  experience  for details, or  skills  for tech stack.', cls: 'muted' },
   ];
@@ -81,9 +88,10 @@ function runCommand(raw) {
 
   if (cmd === 'contact') return [
     { text: 'Contact:', cls: 'info' },
-    { text: '  Email:    marina@example.com', cls: 'output' },
-    { text: '  GitHub:   github.com/marinam', cls: 'output' },
+    { text: '  Email:    marina.mendietarr@gmail.com', cls: 'output' },
+    { text: '  GitHub:   github.com/marinamen', cls: 'output' },
     { text: '  LinkedIn: linkedin.com/in/marinamendieta', cls: 'output' },
+    { text: '  Phone:    +1 942 288 1044', cls: 'output' },
   ];
 
   if (cmd === 'clear') return null;

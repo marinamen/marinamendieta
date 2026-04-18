@@ -184,6 +184,11 @@ h2.section-title::after {
 .info-row:last-child { border-bottom: none; }
 .info-label { color: var(--text-muted); }
 
+/* AWARDS */
+.awards-list { margin-top: 1.5rem; }
+.awards-list h3 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--pink-accent); margin-bottom: 0.75rem; }
+.award-item { font-size: 0.85rem; color: var(--text-muted); padding: 0.25rem 0; }
+
 /* SKILLS */
 .skills-grid {
   display: grid;

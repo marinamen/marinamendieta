@@ -1,6 +1,6 @@
 import './App.css';
 import Terminal from './Terminal';
-import { projects, skills, experience } from './data';
+import { projects, skills, experience, awards } from './data';
 
 function Nav() {
   return (
@@ -23,11 +23,12 @@ function Hero() {
       <p className="hero-tag">{'> hello, world!'}</p>
       <h1>
         Hi, I'm <span>Marina Mendieta</span>.<br />
-        I build software.
+        I research & build AI.
       </h1>
       <p>
-        CS student passionate about systems, full-stack development, and
-        turning ideas into real things. Currently looking for SWE internships.
+        CS student at the University of Toronto. AI researcher, published author,
+        and software engineer. Passionate about language models, AI safety, and
+        making technology equitable.
       </p>
       <div className="hero-btns">
         <a className="btn btn-primary" href="#projects">See my work</a>
@@ -44,18 +45,31 @@ function About() {
       <div className="about-grid">
         <div className="about-text">
           <p>
-            I'm a Computer Science student who loves building things from scratch —
-            whether that's a Unix shell, a web app, or a machine learning pipeline.
+            I'm a Computer Science student at the University of Toronto with a
+            background spanning AI research, software engineering, neuroscience,
+            and linguistics. I've lived and studied in Spain, Japan, and Canada —
+            which shaped my deep interest in how language and culture intersect
+            with technology.
           </p>
           <p>
-            Outside of class I TA for Data Structures, compete in hackathons,
-            and contribute to open-source projects. I care a lot about clean code,
-            good UX, and making technology accessible.
+            My research focuses on large language models and AI safety. I've
+            co-authored work submitted to AAAI 2026, published research on
+            language-specific LLMs presented at three international conferences
+            in Japan, and been invited to contribute at the Barcelona
+            Supercomputing Center.
           </p>
           <p>
-            When I'm not coding I'm probably reading, running, or watching too
-            many YouTube videos about programming language design.
+            Outside of research I write for The Varsity, represent first-year
+            students at Women in Computer Science, and previously founded a
+            Girls in Programming Club at my high school.
           </p>
+
+          <div className="awards-list">
+            <h3>Awards & Recognition</h3>
+            {awards.map(a => (
+              <div key={a} className="award-item">✦ {a}</div>
+            ))}
+          </div>
         </div>
         <div className="about-info">
           <h3>Quick info</h3>
@@ -64,16 +78,24 @@ function About() {
             <span>B.S. Computer Science</span>
           </div>
           <div className="info-row">
-            <span className="info-label">Expected</span>
-            <span>May 2026</span>
+            <span className="info-label">School</span>
+            <span>University of Toronto</span>
           </div>
           <div className="info-row">
-            <span className="info-label">GPA</span>
-            <span>3.8 / 4.0</span>
+            <span className="info-label">Grad</span>
+            <span>2028</span>
+          </div>
+          <div className="info-row">
+            <span className="info-label">Based in</span>
+            <span>Toronto, Canada</span>
+          </div>
+          <div className="info-row">
+            <span className="info-label">IB Score</span>
+            <span>40 / 45</span>
           </div>
           <div className="info-row">
             <span className="info-label">Status</span>
-            <span style={{ color: 'var(--pink-dark)', fontWeight: 600 }}>Open to work</span>
+            <span style={{ color: 'var(--pink-dark)', fontWeight: 600 }}>Open to opportunities</span>
           </div>
         </div>
       </div>
@@ -97,7 +119,7 @@ function Skills() {
 function Projects() {
   return (
     <section className="page-section" id="projects">
-      <h2 className="section-title">Projects</h2>
+      <h2 className="section-title">Projects & Research</h2>
       <div className="projects-grid">
         {projects.map(p => (
           <div key={p.name} className="project-card">
@@ -123,7 +145,7 @@ function Experience() {
       <h2 className="section-title">Experience</h2>
       <div className="timeline">
         {experience.map(e => (
-          <div key={e.role} className="timeline-item">
+          <div key={e.role + e.org} className="timeline-item">
             <div className="timeline-header">
               <h3>{e.role}</h3>
               <span className="date">{e.date}</span>
@@ -156,19 +178,19 @@ function Contact() {
       <div className="contact-grid">
         <div className="contact-text">
           <p>
-            I'm actively looking for summer 2025 internships and always happy to
-            chat about cool projects, research, or opportunities.
+            I'm always open to research collaborations, internship opportunities,
+            and conversations about AI, language, and tech for social good.
           </p>
           <p>
-            The best way to reach me is email — I typically respond within a day.
+            Best way to reach me is email — I typically respond within a day.
           </p>
         </div>
         <div className="contact-links">
-          <a className="contact-link" href="mailto:marina@example.com">
-            <span className="icon">✉</span> marina@example.com
+          <a className="contact-link" href="mailto:marina.mendietarr@gmail.com">
+            <span className="icon">✉</span> marina.mendietarr@gmail.com
           </a>
-          <a className="contact-link" href="https://github.com/marinam" target="_blank" rel="noreferrer">
-            <span className="icon">⌥</span> github.com/marinam
+          <a className="contact-link" href="https://github.com/marinamen" target="_blank" rel="noreferrer">
+            <span className="icon">⌥</span> github.com/marinamen
           </a>
           <a className="contact-link" href="https://linkedin.com/in/marinamendieta" target="_blank" rel="noreferrer">
             <span className="icon">in</span> linkedin.com/in/marinamendieta
@@ -191,7 +213,7 @@ export default function App() {
       <TerminalSection />
       <Contact />
       <footer>
-        <p>Built with React + Vite · marina mendieta · 2025</p>
+        <p>Built with React + Vite · Marina Mendieta · 2025</p>
       </footer>
     </>
   );

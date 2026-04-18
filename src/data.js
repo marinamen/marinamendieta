@@ -1,58 +1,80 @@
 export const projects = [
   {
-    name: "PathFinder Visualizer",
-    desc: "Interactive visualization of Dijkstra's and A* pathfinding algorithms on a grid. Animate walls, weights, and find the shortest path in real time.",
-    tags: ["React", "Algorithms", "JavaScript"],
-    github: "#",
-    demo: "#",
-  },
-  {
-    name: "MiniShell",
-    desc: "A Unix shell written in C supporting pipes, I/O redirection, environment variables, and background processes.",
-    tags: ["C", "Systems", "Unix"],
+    name: "AI Control via Factored Cognition",
+    desc: "Co-authored research on AI safety through Factored Cognition — red/blue-teaming protocols where an untrusted model decomposes tasks for a trusted model. Benchmarked Gemini 2.5 Flash & GPT-4.1 mini on BigCodeBench. Submitted to AAAI 2026.",
+    tags: ["Python", "LLMs", "AI Safety", "Research"],
     github: "#",
     demo: null,
   },
   {
-    name: "StudyBuddy",
-    desc: "Full-stack flashcard app with spaced-repetition scheduling. Users can share decks and track retention stats over time.",
-    tags: ["Python", "Flask", "PostgreSQL", "React"],
+    name: "Language-Specific LLMs Research",
+    desc: "Groundbreaking independent research comparing language-specific vs. centralized LLMs — focusing on LinceZero (Spanish, Clibrain) and LLaMA-3b (Meta). 5000-word paper won 2 conference awards, presented at 3 international AI conferences in Japan.",
+    tags: ["NLP", "LLMs", "Python", "Research"],
+    github: "#",
+    demo: null,
+  },
+  {
+    name: "RevisionDojo AI Grader",
+    desc: "Integrated and trained a LLaMA-3b-based AI model into RevisionDojo's platform to grade papers and generate practice tests. Contributed to 25% traffic increase and 125% lead gen growth. Product backed by Y Combinator.",
+    tags: ["Python", "LLaMA-3b", "AI", "Full-Stack"],
     github: "#",
     demo: "#",
   },
   {
-    name: "TinyML Classifier",
-    desc: "Image classifier trained on a custom dataset and deployed on a Raspberry Pi. Classifies objects via webcam in under 50ms.",
-    tags: ["Python", "TensorFlow", "ML", "Embedded"],
+    name: "Prism Adaptation & Motor Learning",
+    desc: "Led a neurocybernetics research project at Chubu University studying prism adaptation effects on transferral of learning. Programmed simulations, coordinated multidisciplinary team, and published findings at university research symposium.",
+    tags: ["Python", "Neuroscience", "Data Analysis", "Research"],
     github: "#",
     demo: null,
   },
 ];
 
 export const skills = [
-  "Python", "Java", "C / C++", "JavaScript",
-  "React", "Node.js", "Flask", "SQL",
-  "Git", "Linux", "Docker", "REST APIs",
-  "Data Structures", "Algorithms", "OOP", "ML basics",
+  "Python", "JavaScript", "React", "C / C++",
+  "Machine Learning", "LLMs", "NLP", "AI Safety",
+  "Data Analysis", "Research", "Git", "Linux",
+  "SQL", "REST APIs", "Blender", "LaTeX",
 ];
 
 export const experience = [
   {
-    role: "Software Engineering Intern",
-    org: "Acme Corp",
-    date: "Summer 2024",
-    desc: "Built internal tooling for the platform team using Python and React. Reduced deploy time by 30% by automating CI pipeline steps.",
+    role: "ML Researcher",
+    org: "Algoverse AI & Cornell University",
+    date: "2024 – Present",
+    desc: "Co-authoring a peer-reviewed paper on AI control via Factored Cognition submitted to AAAI 2026. Red/blue-teaming LLMs including Gemini 2.5 Flash and GPT-4.1 mini. Awarded 80% scholarship.",
   },
   {
-    role: "Undergraduate TA — Data Structures",
-    org: "University",
-    date: "Fall 2023 – Present",
-    desc: "Hold weekly office hours, grade assignments, and help students debug code. Taught lab sections on trees, graphs, and sorting.",
+    role: "AI & Software Engineering Intern",
+    org: "RevisionDojo (Y Combinator)",
+    date: "Jun 2024 – Jan 2025",
+    desc: "Built and trained a LLaMA-3b AI grader integrated into the platform. Drove 25% increase in website traffic and 125% rise in lead generation. Product reached 300,000+ global users and received Y Combinator backing.",
   },
   {
-    role: "Hackathon Winner — Best Hack",
-    org: "HackXYZ 2023",
-    date: "Oct 2023",
-    desc: "Built an accessibility tool in 24 hours that converts lecture slides to audio summaries using NLP. Won best overall hack.",
+    role: "Independent AI Researcher",
+    org: "ResearchPlus & Freelance",
+    date: "Apr 2024 – Dec 2025",
+    desc: "Researched language-specific vs. centralized LLMs (LinceZero vs. LLaMA-3b). Paper won 2 conference awards and was presented at 3 international AI conferences in Japan. Invited to the Barcelona Supercomputing Center.",
   },
+  {
+    role: "Neurocybernetics Researcher",
+    org: "Chubu University × Fish2Meta",
+    date: "Dec 2023 – Jan 2025",
+    desc: "Led team studying prism adaptation and motor learning transfer. Developed experimental protocols and programmed simulations. Presented at university research symposium and published a research poster.",
+  },
+  {
+    role: "Editorial Writer",
+    org: "The Varsity, University of Toronto",
+    date: "2025 – Present",
+    desc: "Writing for one of Canada's oldest student newspapers covering technology, equity, and campus affairs.",
+  },
+];
+
+export const awards = [
+  "AAAI 2026 — Co-authored submission on AI Safety",
+  "TKS × Microsoft Scholar 2024",
+  "UWC Davis Scholar",
+  "Inspirit AI Winner 2023",
+  "Technovation Girls Semifinalist 2022",
+  "University of Toronto International Scholarship Award",
+  "IB Diploma — 40/45",
 ];
