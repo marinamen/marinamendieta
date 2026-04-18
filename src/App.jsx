@@ -191,7 +191,7 @@ function Contact() {
           <a className="contact-link" href="https://github.com/marinamen" target="_blank" rel="noreferrer">
             <span className="icon">⌥</span> github.com/marinamen
           </a>
-          <a className="contact-link" href="https://linkedin.com/in/marina-mendieta" target="_blank" rel="noreferrer">
+          <a className="contact-link" href="https://linkedin.com/in/marina-mendietarr" target="_blank" rel="noreferrer">
             <span className="icon">in</span> linkedin.com/in/marina-mendieta
           </a>
         </div>
