@@ -186,7 +186,7 @@ function Contact() {
         </div>
         <div className="contact-links">
           <a className="contact-link" href="mailto:m.mendieta@utoronto.mail">
-            <span className="icon">✉</span> m.mendieta@utoronto.mail
+            <span className="icon">✉</span> m.mendieta@utoronto.mail.ca
           </a>
           <a className="contact-link" href="https://github.com/marinamen" target="_blank" rel="noreferrer">
             <span className="icon">⌥</span> github.com/marinamen
