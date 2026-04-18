@@ -32,7 +32,7 @@ function Hero() {
       </h1>
       <p>
         CS student at the University of Toronto. AI researcher, published author,
-        and software engineer. Born and raised in Madrid, completed highschool in Japan and currently in Toronto.
+        and software engineer. Born and raised in Madrid, completed high school in Japan and currently in Toronto.
       </p>
       <div className="hero-btns">
         <a className="btn btn-primary" href="#projects">See my work</a>
@@ -56,15 +56,14 @@ function About() {
             with technology.
           </p>
           <p>
-            My research focuses on large language models and AI safety. I've
-            Co-authored work submitted to AAAI 2026, published research on
-            language-specific LLMs presented at three international conferences
-            in Japan, and been invited to contribute at the Barcelona
-            Supercomputing Center.
+            My research focuses on large language models and AI Control. I've
+            Co-authored work submitted to AAAI 2026, on Factor(T,U): Factored Cognition
+            Strengthens Monitoring of Untrusted AI.
+
           </p>
           <p>
-            Outside of research, I write global news for The Varsity,represent first-year
-            students at Women in Computer Science, and big socialiser.
+            Outside of research, I write global news for The Varsity, represent first-year
+            students at Women in Computer Science, and a big socialiser.
           </p>
 
           <div className="awards-list">
