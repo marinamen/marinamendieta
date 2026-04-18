@@ -31,8 +31,9 @@ export const projects = [
 
 export const skills = [
   "Python", "JavaScript", "React", "C / C++",
-  "Machine Learning", "Git", "Linux",
-  "SQL", "REST APIs", "Blender", "LaTeX",
+  "Machine Learning", "Git", "Pytorch",
+  "SQL", "REST APIs", "Blender", "LaTeX", 
+  "scikit-Learn"
 ];
 
 export const experience = [
