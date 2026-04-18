@@ -24,12 +24,11 @@ function Hero() {
       <p className="hero-tag">{'> hello, world!'}</p>
       <h1>
         Hi, I'm <span>Marina Mendieta</span>.<br />
-        I research & build AI.
+        I'm a student, researcher, & AI enthusiast.
       </h1>
       <p>
         CS student at the University of Toronto. AI researcher, published author,
-        and software engineer. Passionate about language models, AI safety, and
-        making technology equitable.
+        and software engineer. Born and raised in Madrid, completed highschool in Japan and currently in Toronto.
       </p>
       <div className="hero-btns">
         <a className="btn btn-primary" href="#projects">See my work</a>
@@ -46,7 +45,7 @@ function About() {
       <div className="about-grid">
         <div className="about-text">
           <p>
-            I'm a Computer Science student at the University of Toronto with a
+            I'm a Computer Science + Math student at the University of Toronto with a
             background spanning AI research, software engineering, neuroscience,
             and linguistics. I've lived and studied in Spain, Japan, and Canada —
             which shaped my deep interest in how language and culture intersect
@@ -54,15 +53,14 @@ function About() {
           </p>
           <p>
             My research focuses on large language models and AI safety. I've
-            co-authored work submitted to AAAI 2026, published research on
+            Co-authored work submitted to AAAI 2026, published research on
             language-specific LLMs presented at three international conferences
             in Japan, and been invited to contribute at the Barcelona
             Supercomputing Center.
           </p>
           <p>
-            Outside of research I write for The Varsity, represent first-year
-            students at Women in Computer Science, and previously founded a
-            Girls in Programming Club at my high school.
+            Outside of research, I write global news for The Varsity,represent first-year
+            students at Women in Computer Science, and big socialiser.
           </p>
 
           <div className="awards-list">
@@ -183,18 +181,18 @@ function Contact() {
             and conversations about AI, language, and tech for social good.
           </p>
           <p>
-            Best way to reach me is email — I typically respond within a day.
+            Best way to reach me is by email — I typically respond within a day.
           </p>
         </div>
         <div className="contact-links">
-          <a className="contact-link" href="mailto:marina.mendietarr@gmail.com">
-            <span className="icon">✉</span> marina.mendietarr@gmail.com
+          <a className="contact-link" href="mailto:m.mendieta@utoronto.mail">
+            <span className="icon">✉</span> m.mendieta@utoronto.mail
           </a>
           <a className="contact-link" href="https://github.com/marinamen" target="_blank" rel="noreferrer">
             <span className="icon">⌥</span> github.com/marinamen
           </a>
-          <a className="contact-link" href="https://linkedin.com/in/marinamendieta" target="_blank" rel="noreferrer">
-            <span className="icon">in</span> linkedin.com/in/marinamendieta
+          <a className="contact-link" href="https://linkedin.com/in/marina-mendieta" target="_blank" rel="noreferrer">
+            <span className="icon">in</span> linkedin.com/in/marina-mendieta
           </a>
         </div>
       </div>
