@@ -3,7 +3,7 @@ export const projects = [
     name: "AI Control via Factored Cognition",
     desc: "Co-authored research on AI safety through Factored Cognition — red/blue-teaming protocols where an untrusted model decomposes tasks for a trusted model. Benchmarked Gemini 2.5 Flash & GPT-4.1 mini on BigCodeBench. Submitted to AAAI 2026.",
     tags: ["Python", "LLMs", "AI Safety", "Research"],
-    github: "#",
+    github: "https://github.com/edward-lcl/factor-ut-untrusted-decomposer",
     demo: null,
   },
   {
