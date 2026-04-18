@@ -31,8 +31,7 @@ export const projects = [
 
 export const skills = [
   "Python", "JavaScript", "React", "C / C++",
-  "Machine Learning", "LLMs", "NLP", "AI Safety",
-  "Data Analysis", "Research", "Git", "Linux",
+  "Machine Learning", "Git", "Linux",
   "SQL", "REST APIs", "Blender", "LaTeX",
 ];
 
