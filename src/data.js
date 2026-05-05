@@ -4,14 +4,7 @@ export const projects = [
     desc: "Co-authored research on AI safety through Factored Cognition — red/blue-teaming protocols where an untrusted model decomposes tasks for a trusted model. Benchmarked Gemini 2.5 Flash & GPT-4.1 mini on BigCodeBench. Submitted to AAAI 2026.",
     tags: ["Python", "LLMs", "AI Safety", "Research"],
     github: "https://github.com/edward-lcl/factor-ut-untrusted-decomposer",
-    demo: null,
-  },
-  {
-    name: "Language-Specific LLMs Research",
-    desc: "Groundbreaking independent research comparing language-specific vs. centralized LLMs — focusing on LinceZero (Spanish, Clibrain) and LLaMA-3b (Meta). 5000-word paper won 2 conference awards, presented at 3 international AI conferences in Japan.",
-    tags: ["NLP", "LLMs", "Python", "Research"],
-    github: "#",
-    demo: null,
+    published: "https://arxiv.org/abs/2512.02157",
   },
   {
     name: "RevisionDojo AI Grader",
@@ -24,8 +17,13 @@ export const projects = [
     name: "Prism Adaptation & Motor Learning",
     desc: "Led a neurocybernetics research project at Chubu University studying prism adaptation effects on transferral of learning. Programmed simulations, coordinated multidisciplinary team, and published findings at university research symposium.",
     tags: ["Python", "Neuroscience", "Data Analysis", "Research"],
-    github: "#",
-    demo: null,
+    github: "https://github.com/marinamen/fish2meta",
+    poster:"https://drive.google.com/file/d/1ybQIjH_CT3HzLCi1oytem_MX57yKrZmX/view?usp=sharing",
+  },
+  {
+    name: "Language-Specific LLMs Research",
+    desc: "Groundbreaking independent research comparing language-specific vs. centralized LLMs — focusing on LinceZero (Spanish, Clibrain) and LLaMA-3b (Meta). 5000-word paper won 2 conference awards, presented at 3 international AI conferences in Japan.",
+    tags: ["NLP", "LLMs", "Python", "Research"],
   },
 ];
 
